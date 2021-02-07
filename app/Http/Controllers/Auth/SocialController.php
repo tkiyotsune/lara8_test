@@ -15,7 +15,7 @@ class SocialController extends Controller
     public function redirectToProvider(Request $request)
     {
         $provider = $request->provider;
-        return Socialite::driver($provider)->stateless(false)->redirect();
+        return Socialite::driver($provider)->redirect();
     }
 
     /**
