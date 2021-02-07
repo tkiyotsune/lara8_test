@@ -12,9 +12,10 @@ class SocialController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function redirectToProvider()
+    public function redirectToProvider(Request $request)
     {
-        return Socialite::driver('twitter')->redirect();
+        $provider = $request->provider;
+        return Socialite::driver($provider)->stateless(false)->redirect();
     }
 
     /**
@@ -22,9 +23,11 @@ class SocialController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function handleProviderCallback()
+    public function handleProviderCallback(Request $request)
     {
-        $user = Socialite::driver('twitter')->user();
+        $provider = $request->provider;
+
+        $user = Socialite::driver($provider)->user();
 
         dd($user);
     }

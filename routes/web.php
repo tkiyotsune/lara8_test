@@ -18,5 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('login/twitter', [SocialController::class, 'redirectToProvider']);
-Route::get('login/twitter/callback', [SocialController::class, 'handleProviderCallback']);
+//socialite
+Route::get('login/{provider}', [SocialController::class,'redirectToProvider'])->where('provider', 'facebook|twitter|google');
+Route::get('login/{provider}/callback', [SocialController::class,'handleProviderCallback'])->where('provider', 'facebook|twitter|google');

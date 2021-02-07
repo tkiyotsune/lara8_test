@@ -101,7 +101,9 @@
                     </div>
                 </div>
 
-                <a href="/login/twitter">twitterでログイン</a>
+                <p><a href="/login/twitter">twitterでログイン</a></p>
+                <p><a href="/login/facebook">facebookでログイン</a></p>
+                <p><a href="/login/google">googleでログイン</a></p>
 
                 <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
                     <div class="text-center text-sm text-gray-500 sm:text-left">
